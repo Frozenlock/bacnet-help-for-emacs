@@ -68,3 +68,17 @@
 	    (= object-int 3) ;binary-input
 	    (= object-int 4)))) ;binary-output
    device-plist))
+
+(defun bhelp-get-object-property (prop-int object-plist)
+  "Return the value of the property from the OBJECT-PLIST. The
+property is identified by an integer,as defined in the BACnet
+protocol. As a reminder:
+28: Description
+77: Object name
+81: Out of service
+117: Units"
+  (let* ((properties (plist-get object-plist :object-properties))
+	 (property-plist (first (remove-if-not
+				(lambda (property) (= prop-int (plist-get property :prop-int)))
+				properties))))
+    (plist-get property-plist :prop-value)))
