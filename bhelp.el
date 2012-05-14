@@ -82,3 +82,11 @@ protocol. As a reminder:
 				(lambda (property) (= prop-int (plist-get property :prop-int)))
 				properties))))
     (plist-get property-plist :prop-value)))
+
+(defun bhelp-get-object-device (device-plist)
+  "Return the device 'object'"
+  (first (remove-if-not
+	  (lambda (object) 
+	    (= 8 (plist-get object :object-int))) device-plist)))
+
+(provide 'bhelp)
