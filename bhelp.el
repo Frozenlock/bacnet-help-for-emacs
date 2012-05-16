@@ -29,13 +29,9 @@
 
 (require 'json)
 
-(defun bhelp-get-device-info-json (project-id device-id)
-  "Return a plist of the DEVICE-ID (device instance) from the
-  PROJECT-ID. Connect to BACnet Help to retrieve this info"
-  (let ((buffer (url-retrieve-synchronously
-		 (concat "http://bacnethelp.dnsd.me/api/json/project/" 
-			 project-id"/"
-			 device-id)))
+(defun bhelp-get-json (url)
+  "Return a usable emacs list from a json taken from url"
+  (let ((buffer (url-retrieve-synchronously url))
 	(json nil))
     (save-excursion
       (set-buffer buffer)
@@ -44,6 +40,19 @@
       (setq json (buffer-substring-no-properties (point) (point-max)))
       (kill-buffer (current-buffer)))
     json))
+  
+
+(defun bhelp-get-device-info-json (project-id device-id)
+  "Return a plist of the DEVICE-ID (device instance) from the
+  PROJECT-ID. Connect to BACnet Help to retrieve this info"
+  (bhelp-get-json (concat "http://bacnethelp.dnsd.me/api/json/project/" 
+			  project-id"/"
+			  device-id)))
+
+(defun bhelp-get-project-info (project-id)
+  "Return an info plist for a PROJECT-ID."
+  (bhelp-get-json (concat "http://bacnethelp.dnsd.me/api/json/project/" 
+			  project-id)))
 
 (defun bhelp-listify (arg)
   "Convert any remaining vector into a list"
