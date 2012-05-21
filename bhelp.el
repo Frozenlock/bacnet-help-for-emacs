@@ -45,13 +45,13 @@
 (defun bhelp-get-device-info-json (project-id device-id)
   "Return a plist of the DEVICE-ID (device instance) from the
   PROJECT-ID. Connect to BACnet Help to retrieve this info"
-  (bhelp-get-json (concat "http://bacnethelp.dnsd.me/api/json/project/" 
+  (bhelp-get-json (concat "http://bacnethelp.com/api/json/project/" 
 			  project-id"/"
 			  device-id)))
 
 (defun bhelp-get-project-info (project-id)
   "Return an info plist for a PROJECT-ID."
-  (bhelp-get-json (concat "http://bacnethelp.dnsd.me/api/json/project/" 
+  (bhelp-get-json (concat "http://bacnethelp.com/api/json/project/" 
 			  project-id)))
 
 (defun bhelp-listify (arg)
