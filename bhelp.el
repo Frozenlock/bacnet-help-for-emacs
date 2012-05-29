@@ -1,8 +1,8 @@
-;    Copyright 2012 Christian Fortin
+;    Copyright 2012 Frozenlock
 ;
 ;    Filename: bhelp.el
 ;    Version: 1.0
-;    Author: Christian Fortin <frozenlock AT gmail DOT com>
+;    Author: Frozenlock <frozenlock AT gmail DOT com>
 ;    Keywords: bacnet-help json emacs
 ;    Description: Retrieve bacnet device info from bacnet-help
 ;
