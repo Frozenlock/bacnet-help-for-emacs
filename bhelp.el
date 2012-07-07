@@ -49,10 +49,17 @@
 			  project-id"/"
 			  device-id)))
 
-(defun bhelp-get-project-info (project-id)
-  "Return an info plist for a PROJECT-ID."
+(defun bhelp-get-project-info-json (project-id)
+  "Return an info plist for a PROJECT-ID. Connect to BACnet Help
+to retrieve this info"
   (bhelp-get-json (concat "https://bacnethelp.com/api/json/project/" 
 			  project-id)))
+
+(defun bhelp-get-project-info (project-id)
+  "Return an info plist for a PROJECT-ID."
+  (let ((json-object-type 'plist))
+    (bhelp-listify (json-read-from-string 
+		    (bhelp-get-project-info-json project-id)))))
 
 (defun bhelp-listify (arg)
   "Convert any remaining vector into a list"
