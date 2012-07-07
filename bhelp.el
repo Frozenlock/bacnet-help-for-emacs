@@ -67,35 +67,35 @@
     (bhelp-listify (json-read-from-string 
 		    (bhelp-get-device-info-json project-id device-id)))))
 
+
+(defun bhelp-get-properties-list (list)
+  "Takes every other item in a list. In case of an object-plist,
+return every properties."
+  (let ((remains (cddr list)))  
+    (append (list (car list))
+	    (when remains
+	      (every-other remains)))))
+
+
+
+;; The Bacnet Help API return a plist of the following form:
+
+;; (object-integer
+;;    (object-instance
+;;      (key1 property1 key2 property2 ...)
+;;    )
+;; )
+
 (defun bhelp-get-IOs (device-plist)
   "From a device plist, return only the IOs and their properties"
-  (remove-if-not 
-   '(lambda (object)
-      (let ((object-int (plist-get object :object-int)))
-	(or (= object-int 0) ;analog-input
-	    (= object-int 1) ;analog-ouput
-	    (= object-int 3) ;binary-input
-	    (= object-int 4)))) ;binary-output
-   device-plist))
-
-(defun bhelp-get-object-property (prop-int object-plist)
-  "Return the value of the property from the OBJECT-PLIST. The
-property is identified by an integer,as defined in the BACnet
-protocol. As a reminder:
-28: Description
-77: Object name
-81: Out of service
-117: Units"
-  (let* ((properties (plist-get object-plist :object-properties))
-	 (property-plist (first (remove-if-not
-				(lambda (property) (= prop-int (plist-get property :prop-int)))
-				properties))))
-    (plist-get property-plist :prop-value)))
+  (list
+   :0 (plist-get device-plist :0) ;analog-input
+   :1 (plist-get device-plist :1) ;analog-ouput
+   :3 (plist-get device-plist :3) ;binary-input
+   :4 (plist-get device-plist :4))) ;binary-output
 
 (defun bhelp-get-object-device (device-plist)
   "Return the device 'object'"
-  (first (remove-if-not
-	  (lambda (object) 
-	    (= 8 (plist-get object :object-int))) device-plist)))
+  (plist-get device-plist :8))
 
 (provide 'bhelp)
