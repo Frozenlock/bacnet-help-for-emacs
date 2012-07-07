@@ -38,107 +38,11 @@ Retrieve bacnet devices and object info from [[http://bacnethelp.com][Bacnet Hel
 :   	     :13
 :   	     (:0
 :   	      (:Units nil :Object-name "" :Present-value 1 :Out-of-service "false" :Description ""))
-:   	     :14
-:   	     (:0
-:   	      (:Units nil :Object-name "MULTISTATE OUTPUT 0" :Present-value 0 :Out-of-service "false" :Description "MULTISTATE OUTPUT 0")
-:   	      :1
-:   	      (:Units nil :Object-name "MULTISTATE OUTPUT 1" :Present-value 0 :Out-of-service "false" :Description "MULTISTATE OUTPUT 1")
-:   	      :2
-:   	      (:Units nil :Object-name "MULTISTATE OUTPUT 2" :Present-value 0 :Out-of-service "false" :Description "MULTISTATE OUTPUT 2")
-:   	      :3
-:   	      (:Units nil :Object-name "MULTISTATE OUTPUT 3" :Present-value 0 :Out-of-service "false" :Description "MULTISTATE OUTPUT 3"))
-:   	     :10
-:   	     (:0
-:   	      (:File-type "TEXT" :Object-name "FILE 0" :File-size 0 :File-access-method "1" :Description "temp_0.txt")
-:   	      :1
-:   	      (:File-type "TEXT" :Object-name "FILE 1" :File-size 0 :File-access-method "1" :Description "temp_1.txt")
-:   	      :2
-:   	      (:File-type "TEXT" :Object-name "FILE 2" :File-size 0 :File-access-method "1" :Description "temp_2.txt"))
-:   	     :8
-:   	     (:1234
-:   	      (:Model-name "GNU" :Object-name "SimpleServer" :Vendor-name "BACnet Stack at SourceForge" :Device-type nil :Description "server" :Vendor-identifier 260))
-:   	     :21
-:   	     (:0
-:   	      (:Object-name "LS POINT 0" :Present-value nil :Description "LS POINT 0")
-:   	      :1
-:   	      (:Object-name "LS POINT 1" :Present-value nil :Description "LS POINT 1")
-:   	      :2
-:   	      (:Object-name "LS POINT 2" :Present-value nil :Description "LS POINT 2")
-:   	      :3
-:   	      (:Object-name "LS POINT 3" :Present-value nil :Description "LS POINT 3")
-:   	      :4
-:   	      (:Object-name "LS POINT 4" :Present-value nil :Description "LS POINT 4")
-:   	      :5
-:   	      (:Object-name "LS POINT 5" :Present-value nil :Description "LS POINT 5")
-:   	      :6
-:   	      (:Object-name "LS POINT 6" :Present-value nil :Description "LS POINT 6"))
-:   	     :2
-:   	     (:0
-:   	      (:Object-name "ANALOG VALUE 0" :Present-value 0.0 :Description "ANALOG VALUE 0")
-:   	      :1
-:   	      (:Object-name "ANALOG VALUE 1" :Present-value 0.0 :Description "ANALOG VALUE 1")
-:   	      :2
-:   	      (:Object-name "ANALOG VALUE 2" :Present-value 0.0 :Description "ANALOG VALUE 2")
-:   	      :3
-:   	      (:Object-name "ANALOG VALUE 3" :Present-value 0.0 :Description "ANALOG VALUE 3"))
-:   	     :20
-:   	     (:0
-:   	      (:Log-device-object-property nil :Log-interval 90000 :Logging-record nil :Object-name "Trend Log 0" :Log-buffer nil :Logging-object nil :Description "Trend Log 0" :Logging-Type nil)
-:   	      :1
-:   	      (:Log-device-object-property nil :Log-interval 90000 :Logging-record nil :Object-name "Trend Log 1" :Log-buffer nil :Logging-object nil :Description "Trend Log 1" :Logging-Type nil)
-:   	      :2
-:   	      (:Log-device-object-property nil :Log-interval 90000 :Logging-record nil :Object-name "Trend Log 2" :Log-buffer nil :Logging-object nil :Description "Trend Log 2" :Logging-Type nil)
-:   	      :3
-:   	      (:Log-device-object-property nil :Log-interval 90000 :Logging-record nil :Object-name "Trend Log 3" :Log-buffer nil :Logging-object nil :Description "Trend Log 3" :Logging-Type nil)
-:   	      :4
-:   	      (:Log-device-object-property nil :Log-interval 90000 :Logging-record nil :Object-name "Trend Log 4" :Log-buffer nil :Logging-object nil :Description "Trend Log 4" :Logging-Type nil)
-:   	      :5
-:   	      (:Log-device-object-property nil :Log-interval 90000 :Logging-record nil :Object-name "Trend Log 5" :Log-buffer nil :Logging-object nil :Description "Trend Log 5" :Logging-Type nil)
-:   	      :6
-:   	      (:Log-device-object-property nil :Log-interval 90000 :Logging-record nil :Object-name "Trend Log 6" :Log-buffer nil :Logging-object nil :Description "Trend Log 6" :Logging-Type nil)
-:   	      :7
-:   	      (:Log-device-object-property nil :Log-interval 90000 :Logging-record nil :Object-name "Trend Log 7" :Log-buffer nil :Logging-object nil :Description "Trend Log 7" :Logging-Type nil))
-:   	     :3
-:   	     (:0
-:   	      (:Units nil :Object-name "BINARY INPUT 0" :Present-value nil :Out-of-service "false" :Description "BINARY INPUT 0")
-:   	      :1
-:   	      (:Units nil :Object-name "BINARY INPUT 1" :Present-value nil :Out-of-service "false" :Description "BINARY INPUT 1")
-:   	      :2
-:   	      (:Units nil :Object-name "BINARY INPUT 2" :Present-value nil :Out-of-service "false" :Description "BINARY INPUT 2")
-:   	      :3
-:   	      (:Units nil :Object-name "BINARY INPUT 3" :Present-value nil :Out-of-service "false" :Description "BINARY INPUT 3")
-:   	      :4
-:   	      (:Units nil :Object-name "BINARY INPUT 4" :Present-value nil :Out-of-service "false" :Description "BINARY INPUT 4"))
-:   	     :0
-:   	     (:0
-:   	      (:Units "percent" :Object-name "ANALOG INPUT 0" :Present-value 0.0 :Out-of-service "false" :Description "ANALOG INPUT 0")
-:   	      :1
-:   	      (:Units "percent" :Object-name "ANALOG INPUT 1" :Present-value 0.0 :Out-of-service "false" :Description "ANALOG INPUT 1")
-:   	      :2
-:   	      (:Units "percent" :Object-name "ANALOG INPUT 2" :Present-value 0.0 :Out-of-service "false" :Description "ANALOG INPUT 2")
-:   	      :3
-:   	      (:Units "percent" :Object-name "ANALOG INPUT 3" :Present-value 0.0 :Out-of-service "false" :Description "ANALOG INPUT 3"))
-:   	     :5
-:   	     (:8
-:   	      (:Object-name "BINARY VALUE 8" :Present-value nil :Description "BINARY VALUE 8")
-:   	      :9
-:   	      (:Object-name "BINARY VALUE 9" :Present-value nil :Description "BINARY VALUE 9")
-:   	      :2
-:   	      (:Object-name "BINARY VALUE 2" :Present-value nil :Description "BINARY VALUE 2")
-:   	      :3
-:   	      (:Object-name "BINARY VALUE 3" :Present-value nil :Description "BINARY VALUE 3")
-:   	      :0
-:   	      (:Object-name "BINARY VALUE 0" :Present-value nil :Description "BINARY VALUE 0")
-:   	      :1
-:   	      (:Object-name "BINARY VALUE 1" :Present-value nil :Description "BINARY VALUE 1")
-:   	      :5
-:   	      (:Object-name "BINARY VALUE 5" :Present-value nil :Description "BINARY VALUE 5")
-:   	      :4
-:   	      (:Object-name "BINARY VALUE 4" :Present-value nil :Description "BINARY VALUE 4")
-:   	      :7
-:   	      (:Object-name "BINARY VALUE 7" :Present-value nil :Description "BINARY VALUE 7")
-:   	      :6
-:   	      (:Object-name "BINARY VALUE 6" :Present-value nil :Description "BINARY VALUE 6"))
+:
+:             .
+:             .
+:             .
+:
 :   	     :28
 :   	     (:0
 :   	      (:Object-name "LOAD CONTROL 0" :Present-value nil :Description "LOAD CONTROL 0")
@@ -159,9 +63,9 @@ Retrieve bacnet devices and object info from [[http://bacnethelp.com][Bacnet Hel
    following:
 
 
-: (let* ((IOs (bhelp-get-IOs (plist-get 
-: 			    (bhelp-get-device-info "1ff63d7644aed72bdd046f60" "1234") :objects)))
-:        (binary-inputs (plist-get IOs :0)));select every binary inputs
+: (let* ((objects (plist-get 
+: 	    (bhelp-get-device-info "1ff63d7644aed72bdd046f60" "1234") :objects))
+:        (binary-inputs (plist-get objects :0)));select every binary inputs
 :   (plist-get binary-inputs :0));get the first instance
 
 
