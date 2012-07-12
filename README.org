@@ -71,9 +71,9 @@ Retrieve bacnet devices and object info from [[http://bacnethelp.com][Bacnet Hel
 
    Finally, to get a list of every available properties for a given
    object instance, such as the one we just got, use the
-   =bhelp-get-properties-list= function.
+   =bhelp-get-keys= function.
 
-:    (bhelp-get-properties-list *)
+:    (bhelp-get-keys *)
 : 
 : -> (:Units :Object-name :Present-value :Out-of-service :Description)
 

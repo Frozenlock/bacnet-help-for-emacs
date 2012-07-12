@@ -75,13 +75,13 @@ to retrieve this info"
 		    (bhelp-get-device-info-json project-id device-id)))))
 
 
-(defun bhelp-get-properties-list (list)
+(defun bhelp-get-keys (list)
   "Takes every other item in a list. In case of an object-plist,
 return every properties."
   (let ((remains (cddr list)))  
     (append (list (car list))
 	    (when remains
-	      (every-other remains)))))
+	      (bhelp-get-keys remains)))))
 
 
 
@@ -95,11 +95,11 @@ return every properties."
 
 (defun bhelp-get-IOs (device-plist)
   "From a device plist, return only the IOs and their properties"
-  (list
-   :0 (plist-get device-plist :0) ;analog-input
-   :1 (plist-get device-plist :1) ;analog-ouput
-   :3 (plist-get device-plist :3) ;binary-input
-   :4 (plist-get device-plist :4))) ;binary-output
+  (let ((result '()))
+    (dolist (io-type '(:0 :1 :3 :4))
+      (let ((instances (plist-get device-plist io-type)))
+	(when instances (setq result (append result (list io-type instances))))))
+    result))
 
 (defun bhelp-get-object-device (device-plist)
   "Return the device 'object'"
